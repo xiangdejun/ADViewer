@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADViewer", "ADViewer\ADViewer.csproj", "{24650532-72F6-400B-BAFD-7FA13B6E6A42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADViewer_Test", "ADViewer_Test\ADViewer_Test.csproj", "{643230B2-4899-4A85-A4D0-3B32886603F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24650532-72F6-400B-BAFD-7FA13B6E6A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24650532-72F6-400B-BAFD-7FA13B6E6A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24650532-72F6-400B-BAFD-7FA13B6E6A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24650532-72F6-400B-BAFD-7FA13B6E6A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{643230B2-4899-4A85-A4D0-3B32886603F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643230B2-4899-4A85-A4D0-3B32886603F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643230B2-4899-4A85-A4D0-3B32886603F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643230B2-4899-4A85-A4D0-3B32886603F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

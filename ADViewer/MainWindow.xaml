@@ -1,0 +1,91 @@
+﻿<Window x:Class="ADViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="SOMC AD Viewer" Height="500" Width="725" Icon="user.ico">
+
+    <Window.Resources>
+        <DataTemplate x:Key="dtTabItemHeader">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding}" VerticalAlignment="Center"></TextBlock>
+                <Button Margin="10 0 0 0" Click="CloseTab_Click" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabItem}, Path=Header}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <ControlTemplate.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="Width" Value="20"></Setter>
+                                    <Setter Property="Height" Value="20"></Setter>
+                                <!--</Style>
+                                <Style TargetType="Border">-->
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="BorderBrush" Value="Gray"></Setter>
+                                            <Setter Property="BorderThickness" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ControlTemplate.Resources>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="Red"/>
+                                    <Setter Property="Background" Value="Red" />
+                                    <Setter Property="BorderBrush" Value="Red"></Setter>
+                                    <Setter Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                            <Border>
+                                <Image Source="Images\cancel.png" Stretch="None"></Image>
+                                <!--<ContentPresenter />-->
+                            </Border>
+                            
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="spSearchPanel" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="SOMC ID/Name/Email" VerticalAlignment="Center" />
+            <TextBox x:Name="txbxId"  Width="200" Margin="5 0" />
+            <Button x:Name="btnSearch" Content="Search" Width="75" IsDefault="True" Click="Button_Click" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=txbxId, Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <TabControl x:Name="tabs" >
+                <!--<TabItem>
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}" VerticalAlignment="Center"></TextBlock>
+                                <Button Content="X" Width="20" Height="20" Margin="10 0 0 0" Click="CloseTab_Click" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabItem}, Path=Header}"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+
+                    <DataGrid x:Name="dgr" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="name" Binding="{Binding Property}" />
+                            <DataGridTextColumn Header="value" Binding="{Binding Value}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>-->
+            </TabControl>
+
+        </DockPanel>
+    </Grid>
+</Window>
